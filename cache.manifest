@@ -1,0 +1,1 @@
+"$(sed "2s/.*/# `date +'%Y-%m-%d %T'`/" cache.manifest)" 
