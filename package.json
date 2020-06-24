@@ -18,7 +18,7 @@
     "lint-fix": "standard --fix",
     "format": "standard --format",
     "cache": "echo \"$(sed \"2s/.*/# `date +'%Y-%m-%d %T'`/\" cache.manifest)\" > cache.manifest",
-    "production": "npm run build && NODE_ENV=production npm start"
+    "production": "npm run build && set NODE_ENV=production && npm start"
   },
   "dependencies": {
     "express": "^4.16.2",
