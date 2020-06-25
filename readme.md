@@ -52,7 +52,7 @@ I'm sorry but I found the small popup hereditated by Litewrite a little bit dist
 
 This editor is written in HTML+CSS+JS, so anyone familiar with this environment should feel at home.
 
-The frameowrk used is [BackboneJS](https://backbonejs.org), but anyone with a grasp of JQuery (like I did when I started working on it) could get his/her hands dirty with it.
+The framework used is [BackboneJS](https://backbonejs.org), but anyone with a grasp of JQuery (like I did when I started working on it) could get his/her hands dirty with it.
 
 ### Play with the development environment
 
