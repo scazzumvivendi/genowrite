@@ -1,4 +1,4 @@
-# Genowrite
+# genowrite
 *Construction work ahead - distraction-free* by thewritingdude
 
 -----
