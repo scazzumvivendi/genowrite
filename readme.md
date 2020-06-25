@@ -1,5 +1,5 @@
 # Genowrite
-*Construction work ahead* by thewritingdude
+*Construction work ahead - distraction-free* by thewritingdude
 
 -----
 
@@ -10,11 +10,12 @@ Simply put, I needed a word editor which had
 * autocorrect capability
 * dark theme
 * export and import from file
+* word and character counter
 
 I couldn't find any editor that could do all these, so I thought I could make one to fit my needs.
 I thought that [Litewrite](http://github.com/litewrite/litewrite) could be the best basis for starting, looking at the code, so I forked it and moved it in the direction I wanted.
 
-## Similarity and differences with Litewrite
+### Similarity and differences with Litewrite
 
 * Added autocorrect capability.\
 The feature it's there but it's kind of empty. When I'll write I'll add more rules (in Italian).
@@ -26,6 +27,10 @@ Through a very duct-tapey box at the bottom left it is possible to change the ti
 * Adding export and import of .txt files\
 Through the combinations Ctrl+E and Ctrl+I it is possible to export and import a file in .txt format.
 Note that the title is imported automagically.
+* Word and character counter
+A simple word and character counter found in the bottom of the page
+* Removed remote sync
+I'm sorry but I found the small popup hereditated by Litewrite a little bit distratcing and by the way I'm not planning to use that feature. It will be reinstated when I understand what and how remoteStorage works :)
 
 
 ## TODO
@@ -35,18 +40,26 @@ Note that the title is imported automagically.
 * Add more autocorrect words and tokens.
 * Add a menu at the bottom left with shortcut.
 * Correct bugs.
++ Reinstate remoteStorage sync, without borrowing API keys :)
 * Implement import/export of .docx files.
 * Other stuff that I am forgetting...
 
 ------
 
 ## Grown boys zone
+
+## Programming language
+
+This editor is written in HTML+CSS+JS, so anyone familiar with this environment should feel at home.
+
+The frameowrk used is [BackboneJS](https://backbonejs.org), but anyone with a grasp of JQuery (like I did when I started working on it) could get his/her hands dirty with it.
+
 ### Play with the development environment
 
 Set up your development environment:
 
-1. `git clone https://github.com/litewrite/litewrite.git`
-2. `cd litewrite`
+1. `git clone https://github.com/thewritingdude/genowrite.git`
+2. `cd genowrite`
 3. Install [node.js](http://nodejs.org/)
 5. Run `npm install` to install the development dependencies
 6. `npm start` to start a web server at [http://localhost:8000](http://localhost:8000)
