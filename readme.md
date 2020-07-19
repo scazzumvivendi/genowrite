@@ -1,7 +1,7 @@
-# Genowrite
-*Construction work ahead* by thewritingdude
+# genowrite
+*write free, write dark, write geno* by thewritingdude
 
------
+<!-- ![GitHub Logo](/img/genowrite-marquee.png) -->
 
 ## Purpose & History
 
@@ -26,21 +26,40 @@ Through a very duct-tapey box at the bottom left it is possible to change the ti
 * Adding export and import of .txt files\
 Through the combinations Ctrl+E and Ctrl+I it is possible to export and import a file in .txt format.
 Note that the title is imported automagically.
+* Word and character counter
+A simple word and character counter found in the bottom of the page
+* Removed remote sync
+I'm sorry but I found the small popup hereditated by Litewrite a little bit distracting and by the way I'm not planning to use that feature. It will be reinstated when I understand what and how remoteStorage works :)
 
 
 ## TODO
 
 *Note: All of these will be done when they they're done.*
+* Correct bugs.
+    * after > 1 space/cr does not capitalize (use trim?)
+    * if you delete, the scroll bar does not refresh immediately
+    * correct scroll down after enter at bottom and navigation with arrows
+* Reinstate remoteStorage sync, without borrowing API keys :)
 * Select theme.
 * Add more autocorrect words and tokens.
 * Add a menu at the bottom left with shortcut.
-* Correct bugs.
+* "Real" zen mode: remove all bars when writing.
+* Add paragraph space.
 * Implement import/export of .docx files.
+* Update libraries
+* Electron version
 * Other stuff that I am forgetting...
 
 ------
 
 ## Grown boys zone
+
+## Programming language
+
+This editor is written in HTML+CSS+JS, so anyone familiar with this environment should feel at home.
+
+The framework used is [BackboneJS](https://backbonejs.org), but anyone with a grasp of JQuery (like I did when I started working on it) could get their hands dirty with it.
+
 ### Play with the development environment
 
 Set up your development environment:

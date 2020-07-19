@@ -1,20 +1,27 @@
-Litewrite
+genowrite
 
-Hey! Good to see you!
+Hi! Have you seen the readme? No? I hope you take a look at it, I'm too lazy to write also here all the features!
 
-Litewrite is a distraction-free app designed for simple note taking and writing. It works offline and your browser will keep your data saved. If you like your notes to be saved permanently and available on all your devices, you can use the open remoteStorage standard, Dropbox or Google Drive. Just check out the widget in the top right to get started.
+You can tell me if you liked this joke at https://github.com/thewritingdude/genowrite (so you can read the README)
 
-And it is all open source, meaning you can help make it better! If you have any problems or suggestions let us know at http://github.com/litewrite/litewrite/issues
+But since you're here and read all of this, I can tell you some useful shortcuts to work more quickly.
 
-Cool you’re here, hope you like it!
+(Windows):
+- Ctrl + d: new note
+- Ctrl + f: focus search field
+- Ctrl + ↑: switch to note above
+- Ctrl + ↓: switch to note below
+- Ctrl + Space: open sidebar when collapsed
+- Ctrl + e: export note
+- Ctrl + i: import note
 
-Jorin & Jan-Christoph
-
-
-
-By the way, if you use a keyboard you can also use shortcuts to work more quickly:
+(Mac):
 - {Alt} + d: new note
 - {Alt} + f: focus search field
 - {Alt} + ↑: switch to note above
 - {Alt} + ↓: switch to note below
 - {Alt} + Space: open sidebar when collapsed
+- {Alt} + e: export note
+- {Alt} + i: import note
+
+Now press the + button and start writing!
