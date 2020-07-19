@@ -9,7 +9,7 @@ var ShareView = Backbone.View.extend({
   initialize: function (options) {
     _.bindAll(this, 'setLink', 'updatePublic', 'show', 'hide', 'unshare')
     this.remote = options.remote
-    this.template = _.template(template)
+    this.template = _.template(template.default)
 
     this.$shareButton = this.$('.share')
     this.$link = this.$('.link')

@@ -10,7 +10,7 @@ var EntriesView = Backbone.View.extend({
     _.bindAll(this, 'filter', 'render', 'update', 'toTop', 'removeItem', 'selectDoc', 'openFirst')
 
     this.litewrite = options.litewrite
-    this.template = _.template(entriesTemplate)
+    this.template = _.template(entriesTemplate.default)
 
     this.collection
       .on('add', this.render)

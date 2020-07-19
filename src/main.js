@@ -1,4 +1,3 @@
-require('es6-promise').polyfill()
 require('match-media')
 require('window.requestanimationframe')
 var Backbone = require('backbone')
