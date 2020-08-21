@@ -2,14 +2,14 @@ var _ = require('underscore')
 var Backbone = require('backbone')
 var RemoteStorage = require('remotestoragejs')
 var RemostStorageDocuments = require('remotestorage-module-documents')
-// var Widget = require('remotestorage-widget')
+var Widget = require('remotestorage-widget')
 var AppView = require('./views/app')
 var Doc = require('./models/doc')
 var Docs = require('./collections/docs')
 var State = require('./models/state')
 
-var dropboxApiKey = '6p6q5imoisraq6k'
-var googleDriveClientID = '376607343336-uabp27dse5s1jkr767jpdeqhj7t90bll.apps.googleusercontent.com'
+var dropboxApiKey = '5bv3knojsgqqxf6'
+var googleDriveClientID = '121455605765-25ji9puo3qr1lca64gbe5jstui4ns5ql.apps.googleusercontent.com'
 
 function Litewrite () {
   this.initialize()
@@ -36,7 +36,7 @@ _.extend(Litewrite.prototype, Backbone.Events, {
     })
     rs.access.claim('documents', 'rw')
     rs.caching.enable('/documents/notes/')
-    // new Widget(rs).attach('remotestorage-connect')
+    new Widget(rs).attach('remotestorage-connect')
     rs.on('connected', _.bind(function () {
       this.triggerConnected(rs.backend)
     }, this))
@@ -131,3 +131,7 @@ _.extend(Litewrite.prototype, Backbone.Events, {
 })
 
 module.exports = Litewrite
+
+if(module.hot){
+  module.hot.accept();
+}

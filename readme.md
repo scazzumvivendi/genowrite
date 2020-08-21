@@ -36,17 +36,16 @@ I'm sorry but I found the small popup hereditated by Litewrite a little bit dist
 
 *Note: All of these will be done when they they're done.*
 * Correct bugs.
-    * after > 1 space/cr does not capitalize (use trim?)
     * if you delete, the scroll bar does not refresh immediately
     * correct scroll down after enter at bottom and navigation with arrows
-* Reinstate remoteStorage sync, without borrowing API keys :)
+    * title update is fidgety
+* Update remoteStorage widget appearance
 * Select theme.
 * Add more autocorrect words and tokens.
 * Add a menu at the bottom left with shortcut.
 * "Real" zen mode: remove all bars when writing.
 * Add paragraph space.
 * Implement import/export of .docx files.
-* Update libraries
 * Electron version
 * Other stuff that I am forgetting...
 

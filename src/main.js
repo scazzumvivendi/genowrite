@@ -24,3 +24,4 @@ function startHistory () {
   window.location.hash = originalHash
   Backbone.history.start()
 }
+
