@@ -43,7 +43,7 @@ var Docs = Backbone.Collection.extend({
 
   welcome: function () {
     if (this.isEmpty()) {
-      const welcomeContent = lang.welcome.replace(new RegExp('{Alt}', 'g'), utils.hotKey)
+      const welcomeContent = lang.welcome.default.replace(new RegExp('{Alt}', 'g'), utils.hotKey)
       this.addNew({ content: welcomeContent })
     }
   },

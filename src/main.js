@@ -1,4 +1,3 @@
-require('es6-promise').polyfill()
 require('match-media')
 require('window.requestanimationframe')
 var Backbone = require('backbone')
@@ -25,3 +24,4 @@ function startHistory () {
   window.location.hash = originalHash
   Backbone.history.start()
 }
+

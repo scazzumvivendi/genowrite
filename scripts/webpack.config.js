@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 const config = {
+  mode: 'development',
   entry: [
     './src/main'
   ],
@@ -11,15 +12,14 @@ const config = {
     filename: 'genowrite.min.js'
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.IgnorePlugin(new RegExp('^(xmlhttprequest|./lang)$'))
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: [/\.txt$/, /\.html$/],
-        loader: 'raw'
+        loader: 'raw-loader'
       }
     ]
   },
@@ -28,9 +28,6 @@ const config = {
       'rs-adapter': path.join(__dirname, '../lib/backbone.remoteStorage-documents'),
       snap: path.join(__dirname, '../lib/snap')
     }
-  },
-  cssnext: {
-    browsers: 'last 2 versions'
   }
 }
 
@@ -57,6 +54,10 @@ if (process.env.NODE_ENV === 'production') {
     })
   )
 } else {
+  config.optimization = {
+		// We no not want to minimize our code.
+		minimize: false
+	},
   config.devtool = 'cheap-module-eval-source-map'
   config.entry.unshift('webpack-hot-middleware/client')
   config.plugins.push(new webpack.HotModuleReplacementPlugin())

@@ -99,6 +99,7 @@ var AppView = Backbone.View.extend({
   handleKey: function (e) {
     var tabKey = e.keyCode === 9
     var spaceKey = e.keyCode === 32
+    var enterKey = e.keyCode === 13
 
     var sKey = e.keyCode === 83
     var saveShortcut = sKey && e.ctrlKey

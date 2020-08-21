@@ -48,7 +48,8 @@ var EditorView = Backbone.View.extend({
       
       this.$el.val(content || '')
       autosize.update(this.$el)
-      
+        this.$el.blur();
+        this.$el.focus();
       var pos = this.model.get('cursorPos')
       if (pos) {
         this.setCursor(pos)
@@ -159,7 +160,7 @@ var EditorView = Backbone.View.extend({
       }
       this.model.set('title', title)
     },
-    
+
     handleAutoCorrect: function () {
       var pos = this.$el.prop('selectionStart')
       var v = this.$el.val()
@@ -167,11 +168,26 @@ var EditorView = Backbone.View.extend({
       var nearestCR = v.lastIndexOf('\n', pos - 1)
       
       var nearestDot = v.lastIndexOf('.', pos - 2)
+      var nearestThreeDots = v.lastIndexOf('…', pos - 2)
       var nearestQuestionMark = v.lastIndexOf('?', pos - 2)
       var nearestExclamationMark = v.lastIndexOf('!', pos - 2)
+      var nearestQuoteMark = v.lastIndexOf('–', pos - 2)
       
-      var charToCheck = [nearestExclamationMark, nearestQuestionMark, nearestDot]    
+      var charToCheck = [nearestExclamationMark, nearestQuestionMark, nearestDot, nearestQuoteMark, nearestThreeDots].sort((a, b)=>b-a);
       
+       // substitute special tokens
+       var posGap = 0;
+       var specialWordToCheck = v.substring(beforeSpace - 15, pos)
+       for(let t of Object.keys(this.specialTokenToCorrect)){
+         if (specialWordToCheck.toLowerCase().includes(t)) {
+           newWord = specialWordToCheck.replace(t, this.specialTokenToCorrect[t]); 
+           posGap = newWord.length - specialWordToCheck.length
+           this.$el.val(v.substring(0, beforeSpace - 15) + newWord + v.substring(pos, v.length))
+           v = this.$el.val(); //refresh v value;
+           specialWordToCheck = v.substring(beforeSpace - 15, pos)
+         }        
+       }
+
       //First space is special
       if(beforeSpace === -1){
         this.$el.val(v[0].toUpperCase() + v.substring(1, v.length))
@@ -180,15 +196,19 @@ var EditorView = Backbone.View.extend({
           // Capitalize first letter after full stop, exclamation mark or question mark
           if (v.substring(c + 1, pos) === v.substring(beforeSpace, pos) || v.substring(c + 2, pos) === v.substring(nearestCR + 1, pos)) {
             this.$el.val(v.substring(0, c + 2) + v[c + 2].toUpperCase() + v.substring(c + 3, v.length))
-            break
+            v = this.$el.val(); //refresh v value;
+            break;
           }
         }
       }
       
       // No two capitalized consecutive letters
       if (v[beforeSpace + 1] === v[beforeSpace + 1].toUpperCase() && v[beforeSpace + 2] === v[beforeSpace + 2].toUpperCase()) {
-        this.$el.val(v.substring(0, beforeSpace + 2) + v[beforeSpace + 2].toLowerCase() + v.substring(beforeSpace + 3, v.length))
+        this.$el.val(v.substring(0, beforeSpace + 2) + v[beforeSpace + 2].toLowerCase() + v.substring(beforeSpace + 3, v.length));
+        v = this.$el.val(); //refresh v value;
       }
+
+      
       
       // substitute words
       var wordToCheck = v.substring(beforeSpace + 1, pos)
@@ -200,6 +220,8 @@ var EditorView = Backbone.View.extend({
           newWord = newWord[0].toUpperCase() + newWord.substring(1, newWord.length)
         }
         this.$el.val(v.substring(0, beforeSpace + 1) + newWord + v.substring(pos, v.length))
+        v = this.$el.val(); //refresh v value;
+        wordToCheck = v.substring(beforeSpace + 1, pos)
       }
       
       // substitute tokens
@@ -209,6 +231,8 @@ var EditorView = Backbone.View.extend({
           newWord = wordToCheck.replace(t, this.tokenToCorrect[t]); 
           posGap = newWord.length - wordToCheck.length
           this.$el.val(v.substring(0, beforeSpace + 1) + newWord + v.substring(pos, v.length))
+          v = this.$el.val(); //refresh v value;
+          wordToCheck = v.substring(beforeSpace + 1, pos)
         }        
       }
       
@@ -217,11 +241,16 @@ var EditorView = Backbone.View.extend({
     },
     
     wordToCorrect: {
-      '--': '–'
     },
     
     tokenToCorrect: {
-      '...': '…'
+      '...': '…',
+      '\'': '’',
+      '--': '–',
+    },
+
+    specialTokenToCorrect:{
+      '. \n': '.\n'
     }
     
   })

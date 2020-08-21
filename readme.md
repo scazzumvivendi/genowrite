@@ -1,7 +1,7 @@
 # genowrite
-*Construction work ahead - distraction-free* by thewritingdude
+*write free, write dark, write geno* by thewritingdude
 
------
+<!-- ![GitHub Logo](/img/genowrite-marquee.png) -->
 
 ## Purpose & History
 
@@ -30,18 +30,24 @@ Note that the title is imported automagically.
 * Word and character counter
 A simple word and character counter found in the bottom of the page
 * Removed remote sync
-I'm sorry but I found the small popup hereditated by Litewrite a little bit distratcing and by the way I'm not planning to use that feature. It will be reinstated when I understand what and how remoteStorage works :)
+I'm sorry but I found the small popup hereditated by Litewrite a little bit distracting and by the way I'm not planning to use that feature. It will be reinstated when I understand what and how remoteStorage works :)
 
 
 ## TODO
 
 *Note: All of these will be done when they they're done.*
+* Correct bugs.
+    * if you delete, the scroll bar does not refresh immediately
+    * correct scroll down after enter at bottom and navigation with arrows
+    * title update is fidgety
+* Update remoteStorage widget appearance
 * Select theme.
 * Add more autocorrect words and tokens.
 * Add a menu at the bottom left with shortcut.
-* Correct bugs.
-+ Reinstate remoteStorage sync, without borrowing API keys :)
+* "Real" zen mode: remove all bars when writing.
+* Add paragraph space.
 * Implement import/export of .docx files.
+* Electron version
 * Other stuff that I am forgetting...
 
 ------
@@ -52,7 +58,7 @@ I'm sorry but I found the small popup hereditated by Litewrite a little bit dist
 
 This editor is written in HTML+CSS+JS, so anyone familiar with this environment should feel at home.
 
-The framework used is [BackboneJS](https://backbonejs.org), but anyone with a grasp of JQuery (like I did when I started working on it) could get his/her hands dirty with it.
+The framework used is [BackboneJS](https://backbonejs.org), but anyone with a grasp of JQuery (like I did when I started working on it) could get their hands dirty with it.
 
 ### Play with the development environment
 
