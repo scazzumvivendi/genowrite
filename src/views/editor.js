@@ -173,7 +173,7 @@ var EditorView = Backbone.View.extend({
       var nearestExclamationMark = v.lastIndexOf('!', pos - 2)
       var nearestQuoteMark = v.lastIndexOf('–', pos - 2)
       
-      var charToCheck = [nearestExclamationMark, nearestQuestionMark, nearestDot, nearestQuoteMark, nearestThreeDots].sort((a, b)=>b-a);
+      var charToCheck = [nearestExclamationMark, nearestQuestionMark, nearestDot, nearestThreeDots].sort((a, b)=>b-a);
       
        // substitute special tokens
        var posGap = 0;
@@ -199,6 +199,15 @@ var EditorView = Backbone.View.extend({
             v = this.$el.val(); //refresh v value;
             break;
           }
+        }
+      }
+
+      // Capitalize only firse quote in a line
+      if (v.substring(nearestQuoteMark + 1, pos) === v.substring(beforeSpace, pos) || v.substring(nearestQuoteMark + 2, pos) === v.substring(nearestCR + 1, pos)) {
+        let secondToLastQuoteMark = v.lastIndexOf('–', nearestQuoteMark - 1);
+        if (!secondToLastQuoteMark || secondToLastQuoteMark < nearestCR) {
+          this.$el.val(v.substring(0, nearestQuoteMark + 2) + v[nearestQuoteMark + 2].toUpperCase() + v.substring(nearestQuoteMark + 3, v.length))
+          v = this.$el.val(); //refresh v value;
         }
       }
       
