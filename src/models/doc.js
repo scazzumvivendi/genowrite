@@ -56,11 +56,12 @@ var Doc = Backbone.Model.extend({
   },
 
   setCounters: function (doc) {
-    var content = doc.get('content')
-    var charCount = content.length
-    var words = content.split(' ')
+    var content = doc.get('content');
+    var charCount = content.length;
+    var sentences = content.split('\n')
+    var words = sentences.reduce((p,c,i) => p + c.split(' ')
       .filter((n) => !['', '–'].includes(n))
-      .length
+      .length, 0)
     doc.set('charCount', charCount)
     doc.set('wordCount', words)
   }

@@ -1,5 +1,5 @@
 # genowrite
-*write free, write dark, write geno* by thewritingdude
+*write free, write dark, write geno* by scazzumvivendi
 
 <!-- ![GitHub Logo](/img/genowrite-marquee.png) -->
 
@@ -64,7 +64,7 @@ The framework used is [BackboneJS](https://backbonejs.org), but anyone with a gr
 
 Set up your development environment:
 
-1. `git clone https://github.com/thewritingdude/genowrite.git`
+1. `git clone https://github.com/scazzumvivendi/genowrite.git`
 2. `cd genowrite`
 3. Install [node.js](http://nodejs.org/)
 5. Run `npm install` to install the development dependencies
@@ -81,4 +81,4 @@ Forked by [Litewrite](http://github.com/litewrite/litewrite) by [Jan-Christoph B
 
 ## License
 
-Copyleft (c) 2020 [Armando Capozza](http://githug.com/thewritingdude), licensed under the [Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.html) version 3 or later. See license.txt for the full license text. Short: **Do anything you want as long as you credit us and redistribute your changes under the same conditions.**
+Copyleft (c) 2020 [Armando Capozza](http://githug.com/scazzumvivendi), licensed under the [Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.html) version 3 or later. See license.txt for the full license text. Short: **Do anything you want as long as you credit us and redistribute your changes under the same conditions.**
