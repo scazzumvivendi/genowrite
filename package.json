@@ -21,7 +21,7 @@
     "production": "npm run build && set NODE_ENV=production && npm start"
   },
   "dependencies": {
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "file-saver": "^2.0.2"
   },
   "devDependencies": {
